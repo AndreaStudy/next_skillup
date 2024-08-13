@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Next 시작하기
 
-## Getting Started
+1. 디렉토리 구조
 
-First, run the development server:
+- app : 라우팅 + 보여지는 페이지가 있는 디렉토리
+- components : atomic 한 컴포넌트들이 있는 디렉토리
+- lib : 외부 라이브러리가 있는 디렉토리
+- actions :
+- types :
+- datas :
+- providers :
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. 앱 라우팅
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- app 디렉토리안의 디렉토리 구조에 따른 라우팅
+  - ex. app/product : {ip}/product
+- 디렉토리 이름을 ()로 감싸면 해당 디렉토리는 라우팅 무시
+  - ex. (auth) 디렉토리 안에 sign-up 디렉토리 : {ip}/sugn-up
+- 동적 라우팅은 []를 통해서 가능
+  - ex. product 디렉토리 안에 [productId] : {ip}/product/{productId}
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. shadcn
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- npx shadcn-ui@latest init
+- 자동으로 lib 디렉토리안에 utils.ts 생기고 tailwind.config.ts 엡데이트 되면서 설정 됨
+- 사용할 components 를 인스톨해서 사용하기
+  - ex. npx shadcn-ui@latest add button : 버튼 추가하면 components/ui 폴더 안에 button.tsx 파일 생김
+- Dialog : Modal 대신 HTML에서 새로생긴 Dialog를 활용하여 Dialog Component를 만들어져있음.
