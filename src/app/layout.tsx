@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import SessionProvider from "@/providers/SessionProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Andrea's Next",
-  description: "Skill-up project for Next.js by Andrea",
+  title: "SPHAROS 5TH",
+  description: "1차프로젝트 SPHAROS 5TH",
 };
 
 export default function RootLayout({
@@ -17,9 +18,10 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={inter.className}>
-        <header>여기부터 header</header>
-        {children}
-        <footer>여기부터 footer</footer>
+        <SessionProvider>
+          {children}
+          <footer>footer</footer>
+        </SessionProvider>
       </body>
     </html>
   );

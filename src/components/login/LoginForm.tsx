@@ -1,18 +1,23 @@
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 
-function LoginForm({
+function LogInForm({
   handleLogin,
 }: {
   handleLogin: (formData: FormData) => void;
 }) {
   return (
-    <form action={handleLogin}>
-      <Input type="email" name="email" placeholder="이메일" />
-      <Input type="password" name="password" placeholder="비밀번호" />
-      <Button type="submit"></Button>
+    <form
+      action={handleLogin}
+      className="flex flex-col items-center justify-center w-[80%] gap-2 mx-auto"
+    >
+      <Input type="email" name="email" placeholder="Email" />
+      <Input type="password" name="password" placeholder="Password" />
+      <Button type="submit" className="w-full">
+        Sign Up
+      </Button>
     </form>
   );
 }
 
-export default LoginForm;
+export default LogInForm;
